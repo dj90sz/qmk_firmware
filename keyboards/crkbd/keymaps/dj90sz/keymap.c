@@ -43,6 +43,7 @@ enum layers {
 #define NAV_ESC LT(_NAV, KC_ESC)
 #define FUN_ENT LT(_FUNC, KC_ENT)
 #define SFT_BSP LSFT_T(KC_BSPC)
+#define GUI_DEL LGUI_T(KC_DEL)
 #define SFT_ENT LSFT(KC_ENT)  // This is shift+enter not a mod tap
 
 // Shift + Caps
@@ -64,20 +65,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       SFT_CAP,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_LALT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, NUM_SPC, NAV_ESC,    FUN_ENT, SFT_BSP, KC_LGUI \
+                                          KC_LGUI, NUM_SPC, NAV_ESC,    FUN_ENT, SFT_BSP, GUI_DEL \
                                       //`--------------------------'  `--------------------------'
 
   ),
 
   [_NUMBERS] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, XXXXXXX,    KC_1,    KC_2,    KC_3, KC_PLUS,                      XXXXXXX, KC_LCBR, KC_RCBR, KC_PIPE, KC_BSLS, XXXXXXX,\
+      _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      XXXXXXX, KC_LCBR, KC_RCBR, KC_PIPE, KC_BSLS, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX,    KC_4,    KC_5,    KC_6,    KC_0,                       KC_EQL, KC_LPRN, KC_RPRN, KC_COLN, KC_SCLN, XXXXXXX,\
+      _______,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,                       KC_EQL, KC_LPRN, KC_RPRN, KC_COLN, KC_SCLN, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______,  KC_DOT,    KC_7,    KC_8,    KC_9, KC_MINS,                      KC_UNDS, KC_LBRC, KC_RBRC, _______, _______, _______,\
+      _______,  KC_GRV, XXXXXXX, KC_MINS, KC_PLUS,  KC_DOT,                      KC_UNDS, KC_LBRC, KC_RBRC, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, XXXXXXX, _______,     SFT_ENT, KC_DEL, _______ \
+                                          _______, XXXXXXX, _______,    SFT_ENT, _______, _______ \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -101,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, XXXXXXX, XXXXXXX, XXXXXXX,  KC_F11,  KC_F12,                      XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    XXXXXXX, _______, _______ \
+                                          _______,  KC_SPC,  KC_ESC,    XXXXXXX, _______, _______ \
                                       //`--------------------------'  `--------------------------'
   )
 };
